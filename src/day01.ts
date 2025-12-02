@@ -1,7 +1,11 @@
-import { X509Certificate } from "crypto";
 import { readFileSync } from "fs";
+import { argv } from "process";
+import { join } from "path";
 
-const data = readFileSync("input.txt", "utf8");
+const data = readFileSync(
+  join(__dirname, "..", "data", "day01", argv[2]),
+  "utf8",
+);
 const rows = data.trim().split("\n");
 const moves = rows.map((x) => {
   const direction = x.charAt(0);
