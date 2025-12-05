@@ -25,18 +25,6 @@ for (let i = 0; i < rows.length; i++) {
 const num_rows = rows.length;
 const num_cols = rows[0].length;
 
-function* generate_all_coords(
-  rows: number,
-  cols: number,
-): Generator<coord, any, any> {
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      yield [i, j];
-    }
-  }
-}
-
-const gen = generate_all_coords(num_rows, num_cols);
 let count = 0;
 
 // This entire concept of an index is to make up for the fact
