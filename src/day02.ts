@@ -55,12 +55,12 @@ function get_bad_ids2(r: id_range): number[] {
   return [...new Set(bad)];
 }
 
-const bads: number[] = ranges.reduce(
+const bads: number[] = ranges.reduce<number[]>(
   (acc, r) => acc.concat(get_bad_ids(r)),
   [],
 );
 
-const bads2: number[] = ranges.reduce(
+const bads2: number[] = ranges.reduce<number[]>(
   (acc, r) => acc.concat(get_bad_ids2(r)),
   [],
 );
